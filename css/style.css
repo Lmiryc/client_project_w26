@@ -6,11 +6,20 @@ nav ul {
 }
 
 nav a {
-  color: #292196;
+  color: #00274c; /* Michigan Blue */
   text-decoration: none;
   font-weight: 700;
-  padding: 0.75em 0;
-  border-radius: 6px;
+  padding: 0.75rem 1rem; /* 增加点击热区，符合 Mobile First */
+  display: inline-block;
+}
+
+nav a.current_page {
+  background: #ffcb05; /* Michigan Maize */
+  color: #00274c;
+  box-shadow: none; 
+  border-bottom: 4px solid #00274c; /* UM style */
+  font-weight: 900;
+  border-radius: 4px;
 }
 
 nav a:hover,
@@ -20,27 +29,20 @@ nav a:focus {
   outline: none;
 }
 
-nav a.current_page {
-  box-shadow: inset 0 -3px 0 #ffd400; 
-  background: #ffd400;
-  color: #292196;
-  font-weight: 900;
-  border-radius: 6px;
-  display: inline-block;
-  padding: 0.1em 0.4em;
-}
 
 p.double {border-style: double;}
 html, body {
   height: 100%;
 }
+
 body {
-  background-color: rgb(226, 246, 221);
+  background-color: #f3f6f7;
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  /* UM official Arial */
+  font-family: Arial, Helvetica, sans-serif; 
   font-size: clamp(16px, 1.2rem + 0.8vw, 20px);
-  line-height: 1.4;
-  color: #111;
+  line-height: 1.5; 
+  color: #00274c; /* Michigan Blue */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -53,13 +55,16 @@ img {
 }
 
 footer {
-  background-color: #edf105;
-  padding: 16px;
+  background-color: #00274c; /* Michigan Blue */
+  padding: 2rem 1rem;
   text-align: center;
-  color: #030bf0;
-  font-size: clamp(0.8rem, 2vw, 1.1rem);
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  color: #ffffff; 
+  white-space: normal; 
+}
+
+footer a {
+  color: #ffcb05; 
+  font-weight: bold;
 }
 
 
@@ -142,6 +147,7 @@ main {
 }
 main h1 {
   grid-column: 1 / -1;
+  border-bottom: 2px solid #ccc;
   margin: 0.5rem 0;
   font-size: clamp(1.3rem, 6vw, 2.2rem);
   text-align: left;
