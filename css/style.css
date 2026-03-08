@@ -1,0 +1,162 @@
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #292196;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75em 0;
+  border-radius: 6px;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+  background: rgba(41,33,150,0.06);
+  outline: none;
+}
+
+nav a.current_page {
+  box-shadow: inset 0 -3px 0 #ffd400; 
+  background: #ffd400;
+  color: #292196;
+  font-weight: 900;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 0.1em 0.4em;
+}
+
+p.double {border-style: double;}
+html, body {
+  height: 100%;
+}
+body {
+  background-color: rgb(226, 246, 221);
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: clamp(16px, 1.2rem + 0.8vw, 20px);
+  line-height: 1.4;
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+footer {
+  background-color: #edf105;
+  padding: 16px;
+  text-align: center;
+  color: #030bf0;
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.hero-large {
+  width: 100%;
+  max-width: min(800px, 90vw);
+  display: block;
+  margin: clamp(0.5rem, 1.2vw, 1rem) 0;
+}
+.placeholder-600 {
+  width: 100%;
+  max-width: min(600px, 90vw);
+  display: block;
+  margin: clamp(0.5rem, 1.2vw, 1rem) 0;
+}
+.placeholder-500 {
+  width: 100%;
+  max-width: min(500px, 90vw);
+  display: block;
+  margin: clamp(0.5rem, 1.2vw, 1rem) 0;
+}
+.logo-50 {
+  height: clamp(28px, 6vw, 50px);
+  width: auto;
+}
+.fair-thumb {
+  max-width: clamp(120px, 40vw, 300px);
+  max-height: clamp(120px, 40vw, 300px);
+  display: inline-block;
+  vertical-align: middle;
+}
+.no-border {
+  border: 0 !important;
+}
+
+
+.skip-link {
+     position: absolute;
+     top: -999px;
+     left: 0;
+     z-index:1000;
+}
+.skip-link:focus {
+  top: 25px;
+  position: absolute;
+  left: 0;
+  z-index: 1001;
+}
+
+header {
+  padding: clamp(0.5rem, 1.2vw, 1rem) clamp(0.6rem, 3vw, 1.25rem);
+  text-align: center;
+}
+
+header img {
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  height: clamp(28px, 6vw, 56px);
+  width: auto;
+}
+
+h1 {
+  margin: 0.5rem 0;
+  font-size: clamp(1.3rem, 6vw, 2.2rem);
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+header nav {
+  margin: 0.5rem 0 0 0;
+}
+
+main {
+  display: grid;
+  gap: clamp(0.6rem, 2vw, 1.25rem);
+  padding: clamp(0.5rem, 1.6vw, 1rem) clamp(0.6rem, 3vw, 1.25rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(480px, 90%), 1fr));
+  align-items: start;
+}
+main h1 {
+  grid-column: 1 / -1;
+  margin: 0.5rem 0;
+  font-size: clamp(1.3rem, 6vw, 2.2rem);
+  text-align: left;
+}
+
+section {
+  background: #fff;
+  padding: clamp(0.5rem, 1.6vw, 1rem);
+  border-radius: clamp(6px, 1vw, 10px);
+  box-shadow: 0 clamp(1px, 0.2vw, 2px) clamp(2px, 0.4vw, 4px) rgba(0,0,0,0.04);
+}
+
+
+ul, ol {
+  padding-left: clamp(0.9rem, 3vw, 1.2rem);
+  margin: clamp(0.3rem, 1vw, 0.6rem) 0;
+}
+
