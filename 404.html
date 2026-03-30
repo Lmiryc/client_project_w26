@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page Not Found | UMSI Career Development Resource Hub</title>
+	<link rel="stylesheet" href="css/html5reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="error404-page">
+	<header>
+		<a href="#main-content" class="skip-link">Skip to Main Content</a>
+		<img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo" class="error404-logo">
+
+	</header>
+
+	<main id="main-content" class="error404-layout">
+		<section class="error404-card">
+			<p class="error404-badge">404 Not Found </p>
+			<h1>You found a secret hallway.</h1>
+			<p>
+				This page took a career detour, but you are still in the right place.
+				Let’s get you back to the resources you need.
+			</p>
+
+			<form class="error404-search" id="error-search-form" aria-label="Search site pages">
+				<label for="error-search-input">Search for a page</label>
+				<div class="error404-search-row">
+					<input
+						id="error-search-input"
+						name="query"
+						type="search"
+						placeholder="Try: resume, networking, exploration"
+						list="page-suggestions"
+						autocomplete="off"
+					>
+					<button type="submit">Go</button>
+				</div>
+				<datalist id="page-suggestions">
+					<option value="home"></option>
+					<option value="resume"></option>
+					<option value="networking"></option>
+					<option value="exploration"></option>
+					<option value="career fair"></option>
+					<option value="CDO"></option>
+				</datalist>
+				<p id="error-search-help" class="error404-help" aria-live="polite"></p>
+			</form>
+		</section>
+
+		<section class="error404-card">
+			<h2>Helpful links</h2>
+			<ul class="error404-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="resume.html">Resume Support</a></li>
+				<li><a href="netwk.html">Networking & Connections</a></li>
+				<li><a href="exploration.html">Career Exploration</a></li>
+				<li><a href="https://umich.instructure.com/courses/137916">UMSI CDO</a></li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>© Copyright <span id="current-year"></span> UMSI | <a href="https://umich.instructure.com/courses/137916">UMSI CDO</a></p>
+	</footer>
+
+	<script>
+		document.getElementById('current-year').textContent = new Date().getFullYear();
+
+		const searchForm = document.getElementById('error-search-form');
+		const searchInput = document.getElementById('error-search-input');
+		const helpText = document.getElementById('error-search-help');
+
+		const pageRoutes = [
+			{ keywords: ['home', 'index', 'start'], url: 'index.html' },
+			{ keywords: ['resume', 'cv'], url: 'resume.html' },
+			{ keywords: ['network', 'networking', 'connection'], url: 'netwk.html' },
+			{ keywords: ['explore', 'exploration', 'career fair', 'job'], url: 'exploration.html' },
+			{ keywords: ['cdo', 'office', 'UMSI'], url: 'https://umich.instructure.com/courses/137916' }
+		];
+
+		searchForm.addEventListener('submit', function(event) {
+			event.preventDefault();
+			const query = searchInput.value.trim().toLowerCase();
+
+			if (!query) {
+				helpText.textContent = 'Please enter a keyword (for example: resume or networking).';
+				return;
+			}
+
+			const match = pageRoutes.find(route =>
+				route.keywords.some(keyword => query.includes(keyword))
+			);
+
+			if (match) {
+				window.location.href = match.url;
+				return;
+			}
+
+			helpText.textContent = 'No exact match found. Try Home, Resume, Networking, or Exploration.';
+		});
+	</script>
+</body>
+</html>

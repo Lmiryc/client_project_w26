@@ -122,7 +122,7 @@ header {
 header img {
   display: block;
   margin: 0 auto 0.5rem auto;
-  height: clamp(28px, 6vw, 56px);
+  height: clamp(56px, 12vw, 112px);
   width: auto;
 }
 
@@ -284,6 +284,108 @@ main a:focus {
   border-radius: 6px;
 }
 
+.error404-layout {
+  grid-template-columns: 1fr;
+}
+
+body.error404-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.error404-page .error404-layout {
+  flex: 1 0 auto;
+}
+
+body.error404-page .error404-logo {
+  height: clamp(56px, 12vw, 112px);
+}
+
+body.error404-page footer {
+  margin-top: auto;
+}
+
+.error404-card {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.error404-badge {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #ffcb05;
+  color: #00274c;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.error404-search {
+  margin-top: 0.8rem;
+}
+
+.error404-search label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.error404-search-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.error404-search input {
+  flex: 1 1 260px;
+  min-height: 44px;
+  border: 2px solid #b9c4d1;
+  border-radius: 6px;
+  padding: 0 0.7rem;
+  font: inherit;
+  color: #00274c;
+  background: #fff;
+}
+
+.error404-search input:focus {
+  border-color: #00274c;
+  outline: 2px solid rgba(255, 203, 5, 0.6);
+  outline-offset: 1px;
+}
+
+.error404-search button {
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 2px solid #00274c;
+  border-radius: 6px;
+  background: #00274c;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.error404-search button:hover,
+.error404-search button:focus {
+  background: #001b35;
+}
+
+.error404-help {
+  margin-top: 0.45rem;
+  min-height: 1.25em;
+}
+
+.error404-links {
+  margin-top: 0.25rem;
+}
+
+.error404-links li {
+  margin: 0.45rem 0;
+}
+
 @media screen and (min-width: 900px) {
   body {
     font-size: clamp(18px, 1rem + 0.35vw, 22px);
@@ -299,7 +401,7 @@ main a:focus {
 
   header img {
     margin: 0 0 0.75rem 0;
-    height: 64px;
+    height: 128px;
   }
 
   nav ul {
@@ -373,6 +475,19 @@ main a:focus {
 
   .exploration-layout .events-section .fair-thumb {
     width: 260px;
+  }
+
+  .error404-layout {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .error404-layout .error404-card:first-of-type {
+    grid-column: 1 / 9;
+  }
+
+  .error404-layout .error404-card:last-of-type {
+    grid-column: 9 / 13;
+    align-self: start;
   }
 
   footer {
