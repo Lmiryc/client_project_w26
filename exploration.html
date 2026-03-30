@@ -22,12 +22,12 @@
 
     </header>
     
-    <main id="main-content">
+    <main id="main-content" class="exploration-layout">
         <h1> Career Exploration </h1>
         <img src="images/exploration-placeholder.JPG" alt="Career exploration placeholder" class="hero-large">
-        <section>
+        <section class="jobs-section">
             <h2>The job link to some companys</h2>
-            <ul>
+            <ul class="job-links">
                 <li>
                     <img src="images/google.png" alt="Google Logo" class="logo-50">
                     <a href="https://careers.google.com/">Google</a>
@@ -50,15 +50,20 @@
                 </li>
             </ul>
         </section>
-        <section>
+        <section class="events-section">
             <h2> Some events of UMSI Career Fair</h2>
             <p> In UMSI Career Fair, students have chance to direct send their resume to HR in campus. Students are able to talk with company representative and get the recommendations and feedbacks immediately. </p>
+            <div class="fair-gallery">
                 <img src="./images/fair.jpg" alt="UMSI career fair event" title="UMSI career fair" class="fair-thumb">
                 <img src="./images/course.jpg" alt="UMSI career fair preparation" title="UMSI career fair preparation course" class="fair-thumb">
+            </div>
         </section>
     </main>
-    <footer>
-    <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI CDO </a></p>
-    </footer>
+        <footer>
+        <p>© Copyright <span id="current-year"></span> UMSI | <a href="https://umich.instructure.com/courses/137916">UMSI CDO</a></p>
+        </footer>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
 </body>
 </html>

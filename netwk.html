@@ -116,8 +116,11 @@
         </ul>
     </section>
         </main>
-    <footer>
-    <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI CDO</a></p>
-    </footer>
+        <footer>
+        <p>© Copyright <span id="current-year"></span> UMSI | <a href="https://umich.instructure.com/courses/137916">UMSI CDO</a></p>
+        </footer>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
 </body>
 </html>
